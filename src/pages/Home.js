@@ -1,7 +1,11 @@
+import FactSheet from "../components/FactSheet";
+import VideoHeader from "../components/VideoHeader";
+
 const Home = () => {
   return (
     <div>
-      <video src="https://youtu.be/VJH5FJ5kaJA?list=TLGGAijfoMd70gEwMzAzMjAyMQ"></video>
+      <VideoHeader />
+      <FactSheet />
     </div>
   );
 };
