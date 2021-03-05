@@ -37,13 +37,11 @@ const Features = () => {
   ]);
 
   return (
-    <div className="bg-white rounded-t-3xl">
-      <div className="lg:w-4/5 lg:mx-auto">
-        <div className="flex overflow-auto lg:grid lg:grid-cols-4">
-          {features.map((feature) => (
-            <Feature feature={feature} key={feature.id} />
-          ))}
-        </div>
+    <div className="lg:w-4/5 lg:mx-auto">
+      <div className="flex overflow-auto lg:grid lg:grid-cols-4">
+        {features.map((feature) => (
+          <Feature feature={feature} key={feature.id} />
+        ))}
       </div>
     </div>
   );

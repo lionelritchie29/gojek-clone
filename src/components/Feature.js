@@ -1,7 +1,7 @@
 const Feature = ({ feature }) => {
   return (
     <div className="min-w-full lg:min-w-0">
-      <div className="w-1/2 mx-auto">
+      <div className="w-1/2 lg:w-3/5 mx-auto">
         <img src={feature.icon} />
       </div>
       <div className="w-4/5 mx-auto">
