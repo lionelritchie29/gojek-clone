@@ -7,7 +7,7 @@ import digitalisingMerchantIcon from "../assets/icon4.svg";
 import { useState } from "react";
 
 const Features = () => {
-  const [features, setFeatures] = useState([
+  const [features] = useState([
     {
       id: 1,
       icon: fortuneFavoriteIcon,
