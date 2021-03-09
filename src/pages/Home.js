@@ -8,7 +8,7 @@ const Home = () => {
       <VideoHeader />
       <AchievementSheet />
       <div
-        className="h-72 bg-white -mt-52"
+        className="h-72 bg-white -mt-60"
         style={{
           borderTopRightRadius: "6rem",
           borderTopLeftRadius: "6rem",
