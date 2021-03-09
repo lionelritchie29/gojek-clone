@@ -5,3 +5,14 @@ button {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.3s;
 }
+
+.info-card {
+  min-height: 15rem;
+  border-radius: 3rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .info-card {
+    min-height: 23rem;
+  }
+}

@@ -1,8 +1,8 @@
-import Features from "./Features";
+import Achievements from "./Achievements";
 
-const FactSheet = () => {
+const AchievementSheet = () => {
   return (
-    <div className="bg-secondary">
+    <section className="bg-secondary">
       <div>
         <section className="p-8 pt-24 lg:p-24 factsheet-header flex flex-col justify-center align-center">
           <h2 className="text-white font-bold text-3xl lg:text-6xl text-center">
@@ -20,10 +20,10 @@ const FactSheet = () => {
           </div>
         </section>
 
-        <Features />
+        <Achievements />
       </div>
-    </div>
+    </section>
   );
 };
 
-export default FactSheet;
+export default AchievementSheet;

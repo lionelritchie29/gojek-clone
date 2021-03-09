@@ -1,20 +1,22 @@
-import FactSheet from "../components/FactSheet";
+import AchievementSheet from "../components/achievement/AchievementSheet";
+import FactSheet from "../components/facts/FactSheet";
 import VideoHeader from "../components/VideoHeader";
 
 const Home = () => {
   return (
     <div>
       <VideoHeader />
-      <FactSheet />
+      <AchievementSheet />
       <div
-        className="h-72 bg-white -mt-60"
+        className="h-72 bg-white -mt-52"
         style={{
-          borderTopRightRadius: "2.5rem",
-          borderTopLeftRadius: "2.5rem",
+          borderTopRightRadius: "6rem",
+          borderTopLeftRadius: "6rem",
         }}
       >
         {" "}
       </div>
+      <FactSheet />
     </div>
   );
 };

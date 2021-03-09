@@ -1,13 +1,13 @@
-import Feature from "./Feature";
+import Achievement from "./Achievement";
 
-import fortuneFavoriteIcon from "../assets/icon1.svg";
-import contributionIcon from "../assets/icon2.svg";
-import greenerIcon from "../assets/icon3.svg";
-import digitalisingMerchantIcon from "../assets/icon4.svg";
+import fortuneFavoriteIcon from "../../assets/icon1.svg";
+import contributionIcon from "../../assets/icon2.svg";
+import greenerIcon from "../../assets/icon3.svg";
+import digitalisingMerchantIcon from "../../assets/icon4.svg";
 import { useState } from "react";
 
-const Features = () => {
-  const [features] = useState([
+const Achievements = () => {
+  const [achievement] = useState([
     {
       id: 1,
       icon: fortuneFavoriteIcon,
@@ -39,12 +39,12 @@ const Features = () => {
   return (
     <div className="lg:w-4/5 lg:mx-auto">
       <div className="flex overflow-auto lg:grid lg:grid-cols-4">
-        {features.map((feature) => (
-          <Feature feature={feature} key={feature.id} />
+        {achievement.map((achievement) => (
+          <Achievement achievement={achievement} key={achievement.id} />
         ))}
       </div>
     </div>
   );
 };
 
-export default Features;
+export default Achievements;
