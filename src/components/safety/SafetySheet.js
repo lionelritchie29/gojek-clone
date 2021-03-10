@@ -3,14 +3,16 @@ import safetyBgDesktop from "../../assets/safety-desktop.jpg";
 import { useEffect, useState } from "react";
 
 const SafetySheet = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  const resizeWindowWidth = () => {
+    setWindowWidth(window.innerWidth);
+  };
 
   useEffect(() => {
-    if (window.innerWidth <= 680) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
+    resizeWindowWidth();
+    window.addEventListener("resize", resizeWindowWidth);
+    return () => window.removeEventListener("resize", resizeWindowWidth);
   }, []);
 
   return (
@@ -19,7 +21,7 @@ const SafetySheet = () => {
         className="min-h-screen min-w-screen py-24 px-6 lg:p-72 flex items-end"
         style={{
           backgroundImage: `url(${
-            isMobile ? safetyBgMobile : safetyBgDesktop
+            windowWidth <= 640 ? safetyBgMobile : safetyBgDesktop
           })`,
         }}
       >
