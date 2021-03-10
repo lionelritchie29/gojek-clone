@@ -3,7 +3,7 @@ const Fact = ({ fact }) => {
   return (
     <div className="min-w-full lg:min-w-0">
       <div
-        className="info-card w-9/12 lg:w-10/12 mx-auto lg:w-full flex justify-center flex-col mt-20"
+        className={`${fact.shadow} info-card w-9/12 lg:w-10/12  mx-auto lg:w-full flex justify-center flex-col mt-20`}
         style={{ backgroundColor: fact.color }}
       >
         <div className="mx-auto -mt-16 lg:-mt-32">

@@ -13,6 +13,7 @@ const Facts = () => {
       header: "190 million+",
       detail: "app downloads since 2015",
       color: "#7CCC6C",
+      shadow: "shadow-green",
     },
     {
       id: 2,
@@ -20,6 +21,7 @@ const Facts = () => {
       header: "2 million+",
       detail: "driver partners",
       color: "#BD7AB3",
+      shadow: "shadow-purple",
     },
     {
       id: 3,
@@ -27,6 +29,7 @@ const Facts = () => {
       header: "900,000+",
       detail: "GoFood merchants",
       color: "#FF8F1C",
+      shadow: "shadow-orange",
     },
     {
       id: 4,
@@ -34,13 +37,14 @@ const Facts = () => {
       header: "2.448x",
       detail: "jump in downloads from 2015 to 2020",
       color: "#4AC9E3",
+      shadow: "shadow-blue",
     },
   ]);
 
   return (
-    <div className="lg:w-3/4 lg:mx-auto mt-16">
+    <div className="lg:w-4/5 lg:mx-auto mt-16">
       <div
-        className="flex overflow-auto lg:grid lg:grid-cols-4 gap-10"
+        className="flex overflow-auto px-8 lg:grid lg:grid-cols-4 gap-10"
         style={{ gridAutoRows: "1fr" }}
       >
         {facts.map((fact) => (
