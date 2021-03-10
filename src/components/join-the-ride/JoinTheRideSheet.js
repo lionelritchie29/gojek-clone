@@ -1,10 +1,11 @@
 import joinBgDesktop from "../../assets/join-desktop.jpg";
+import JobCards from "./JobCards";
 
 const JoinTheRideSheet = () => {
   return (
-    <section className="h-screen bg-secondary relative">
+    <section className="bg-secondary h-full relative">
       <div
-        className="h-3/5 relative join-the-ride-banner z-0"
+        className="h-2/6 lg:h-4/6 absolute top-0 left-0 w-full join-the-ride-banner z-0"
         style={{
           backgroundImage: `url(${joinBgDesktop})`,
         }}
@@ -17,11 +18,13 @@ const JoinTheRideSheet = () => {
         ></div>
       </div>
 
-      <div className="absolute top-0 left-0 h-full w-full mx-auto py-32">
-        <div className="w-4/5 mx-auto">
-          <h1 className="text-white font-bold text-7xl tracking-wide">
+      <div className="top-0 left-0 h-full w-full mx-auto py-16 lg:py-32 z-10 relative">
+        <div className="w-10/12 lg:w-4/5 mx-auto">
+          <h1 className="text-white mb-40 font-extrabold font-extended text-4xl lg:text-7xl tracking-wide">
             Join the ride
           </h1>
+
+          <JobCards />
         </div>
       </div>
     </section>
