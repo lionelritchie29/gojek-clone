@@ -5,7 +5,7 @@ const AchievementSheet = () => {
     <section className="bg-secondary">
       <div>
         <section className="p-8 pt-24 lg:p-24 factsheet-header flex flex-col justify-center align-center">
-          <h2 className="text-white font-bold text-3xl lg:text-6xl text-center">
+          <h2 className="font-extended text-white font-extrabold text-3xl lg:text-6xl tracking-wide text-center">
             We're Gojek, <br />
             the drivers of change
           </h2>

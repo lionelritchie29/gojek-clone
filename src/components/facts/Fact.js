@@ -13,7 +13,9 @@ const Fact = ({ fact }) => {
         </div>
 
         <div className="p-8 mt-4 lg:mt-12">
-          <h3 className="font-bold lg:text-4xl text-3xl">{fact.header}</h3>
+          <h3 className="font-extrabold lg:text-4xl font-extended text-3xl">
+            {fact.header}
+          </h3>
           <p className="font-semibold text-lg lg:text-xl mt-4">{fact.detail}</p>
         </div>
       </div>

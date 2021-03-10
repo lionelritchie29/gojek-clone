@@ -8,6 +8,10 @@ module.exports = {
         primary: "rgba(0,136,13,1)",
       },
     },
+    fontFamily: {
+      sans: ['"Maison Neue"', "sans-serif"],
+      extended: ['"Maison Neue Extended"', "sans-serif"],
+    },
   },
   variants: {
     extend: {},

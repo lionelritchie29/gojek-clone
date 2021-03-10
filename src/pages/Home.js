@@ -1,5 +1,7 @@
 import AchievementSheet from "../components/achievement/AchievementSheet";
+import AchievementWhiteSpace from "../components/achievement/AchievementWhiteSpace";
 import FactSheet from "../components/facts/FactSheet";
+import JoinTheRideSheet from "../components/join-the-ride/JoinTheRideSheet";
 import SafetySheet from "../components/safety/SafetySheet";
 import VideoHeader from "../components/VideoHeader";
 
@@ -8,17 +10,10 @@ const Home = () => {
     <div>
       <VideoHeader />
       <AchievementSheet />
-      <div
-        className="h-72 bg-white -mt-60"
-        style={{
-          borderTopRightRadius: "6rem",
-          borderTopLeftRadius: "6rem",
-        }}
-      >
-        {" "}
-      </div>
+      <AchievementWhiteSpace />
       <FactSheet />
       <SafetySheet />
+      <JoinTheRideSheet />
     </div>
   );
 };

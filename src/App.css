@@ -1,3 +1,165 @@
+@font-face {
+  font-family: "Maison Neue";
+  src: url("./assets/fonts/MaisonNeue-Black.woff2") format("woff2"),
+    url("./assets/fonts/MaisonNeue-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Maison Neue";
+  src: url("./assets/fonts/MaisonNeue-Bold.woff2") format("woff2"),
+    url("./assets/fonts/MaisonNeue-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Maison Neue";
+  src: url("./assets/fonts/MaisonNeue-Book.woff2") format("woff2"),
+    url("./assets/fonts/MaisonNeue-Book.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Maison Neue";
+  src: url("./assets/fonts/MaisonNeue-DemiBold.woff2") format("woff2"),
+    url("./assets/fonts/MaisonNeue-DemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Maison Neue";
+  src: url("./assets/fonts/MaisonNeue-ExtraBold.woff2") format("woff2"),
+    url("./assets/fonts/MaisonNeue-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Maison Neue ExtraThin";
+  src: url("./assets/fonts/MaisonNeue-ExtraThin.woff2") format("woff2"),
+    url("./assets/fonts/MaisonNeue-ExtraThin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Maison Neue";
+  src: url("./assets/fonts/MaisonNeue-Light.woff2") format("woff2"),
+    url("./assets/fonts/MaisonNeue-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Maison Neue";
+  src: url("./assets/fonts/MaisonNeue-Medium.woff2") format("woff2"),
+    url("./assets/fonts/MaisonNeue-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Maison Neue";
+  src: url("./assets/fonts/MaisonNeue-Thin.woff2") format("woff2"),
+    url("./assets/fonts/MaisonNeue-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Maison Neue Extended";
+  src: url("./assets/fonts/MaisonNeue-ExtendedBlack.woff2") format("woff2"),
+    url("./assets/fonts/MaisonNeue-ExtendedBlack.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Maison Neue Extended";
+  src: url("./assets/fonts/MaisonNeue-ExtendedBold.woff2") format("woff2"),
+    url("./assets/fonts/MaisonNeue-ExtendedBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Maison Neue Extended";
+  src: url("./assets/fonts/MaisonNeue-ExtendedBook.woff2") format("woff2"),
+    url("./assets/fonts/MaisonNeue-ExtendedBook.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Maison Neue Extended";
+  src: url("./assets/fonts/MaisonNeue-ExtendedExtraBold.woff2") format("woff2"),
+    url("./assets/fonts/MaisonNeue-ExtendedExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Maison Neue Extended";
+  src: url("./assets/fonts/MaisonNeue-ExtendedDemiBold.woff2") format("woff2"),
+    url("./assets/fonts/MaisonNeue-ExtendedDemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Maison Neue Extended ExtraThin";
+  src: url("./assets/fonts/MaisonNeue-ExtendedExtraThin.woff2") format("woff2"),
+    url("./assets/fonts/MaisonNeue-ExtendedExtraThin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Maison Neue Extended";
+  src: url("./assets/fonts/MaisonNeue-ExtendedMedium.woff2") format("woff2"),
+    url("./assets/fonts/MaisonNeue-ExtendedMedium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Maison Neue Extended";
+  src: url("./assets/fonts/MaisonNeue-ExtendedLight.woff2") format("woff2"),
+    url("./assets/fonts/MaisonNeue-ExtendedLight.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Maison Neue Extended";
+  src: url("./assets/fonts/MaisonNeue-ExtendedThin.woff2") format("woff2"),
+    url("./assets/fonts/MaisonNeue-ExtendedThin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
 button {
   min-width: 44px;
   min-height: 44px;
@@ -34,6 +196,14 @@ button {
 .safety-container {
   background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4));
   z-index: 99;
+}
+
+.join-the-ride-banner {
+  background-repeat: "no-repeat";
+  background-size: "cover";
+  background-position: "center";
+  border-bottom-left-radius: 7rem;
+  border-bottom-right-radius: 7rem;
 }
 
 .safety-container > div {
