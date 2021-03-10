@@ -1,8 +1,8 @@
 const Fact = ({ fact }) => {
   return (
-    <div className="lg:min-w-0" style={{ minWidth: "75%" }}>
+    <div className="info-card-container lg:min-w-0">
       <div
-        className={`${fact.shadow} info-card lg:w-10/12  mx-auto flex justify-center flex-col mt-20`}
+        className={`${fact.shadow} info-card mx-auto flex justify-center flex-col mt-20`}
         style={{
           backgroundColor: fact.color,
           marginRight: fact.id === 4 ? "1rem" : 0,

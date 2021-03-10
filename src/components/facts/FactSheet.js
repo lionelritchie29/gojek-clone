@@ -2,7 +2,7 @@ import Facts from "./Facts";
 
 const FactSheet = () => {
   return (
-    <section className="pb-12">
+    <section>
       <h2 className="font-bold text-3xl lg:text-6xl text-center">
         We scale like a dream
       </h2>

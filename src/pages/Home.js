@@ -1,5 +1,6 @@
 import AchievementSheet from "../components/achievement/AchievementSheet";
 import FactSheet from "../components/facts/FactSheet";
+import SafetySheet from "../components/safety/SafetySheet";
 import VideoHeader from "../components/VideoHeader";
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
         {" "}
       </div>
       <FactSheet />
+      <SafetySheet />
     </div>
   );
 };
