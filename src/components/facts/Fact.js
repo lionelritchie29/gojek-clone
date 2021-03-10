@@ -1,10 +1,12 @@
 const Fact = ({ fact }) => {
-  console.log(fact.detail.length);
   return (
-    <div className="min-w-full lg:min-w-0">
+    <div className="lg:min-w-0" style={{ minWidth: "75%" }}>
       <div
-        className={`${fact.shadow} info-card w-9/12 lg:w-10/12  mx-auto lg:w-full flex justify-center flex-col mt-20`}
-        style={{ backgroundColor: fact.color }}
+        className={`${fact.shadow} info-card lg:w-10/12  mx-auto lg:w-full flex justify-center flex-col mt-20`}
+        style={{
+          backgroundColor: fact.color,
+          marginRight: fact.id == 4 ? "1rem" : 0,
+        }}
       >
         <div className="mx-auto -mt-16 lg:-mt-32">
           <img src={fact.icon} alt={fact.header} />
