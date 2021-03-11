@@ -1,19 +1,9 @@
 import safetyBgMobile from "../../assets/safety-mobile.jpg";
 import safetyBgDesktop from "../../assets/safety-desktop.jpg";
-import { useEffect, useState } from "react";
+import useWindowWidth from "../../hooks/useWindowWidth";
 
 const SafetySheet = () => {
-  const [windowWidth, setWindowWidth] = useState(0);
-
-  const resizeWindowWidth = () => {
-    setWindowWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    resizeWindowWidth();
-    window.addEventListener("resize", resizeWindowWidth);
-    return () => window.removeEventListener("resize", resizeWindowWidth);
-  }, []);
+  const windowWidth = useWindowWidth();
 
   return (
     <section className="safety-container min-h-screen min-w-screen">

@@ -7,7 +7,7 @@ import {
   faGooglePlay,
   faApple,
 } from "@fortawesome/free-brands-svg-icons";
-import { useEffect, useState } from "react";
+import useWindowWidth from "../../hooks/useWindowWidth";
 
 const SocialMediaLinks = () => {
   const [socials] = useState([
@@ -29,7 +29,7 @@ const SocialMediaLinks = () => {
     },
   ]);
 
-  const [windowWidth, setWindowWidth] = useState(0);
+  const windowWidth = useWindowWidth();
 
   const mobileAppIconsLayout = (
     <div>
@@ -54,16 +54,6 @@ const SocialMediaLinks = () => {
       </a>
     </div>
   );
-
-  const resizeWindowWidth = () => {
-    setWindowWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    resizeWindowWidth();
-    window.addEventListener("resize", resizeWindowWidth);
-    return () => window.removeEventListener("resize", resizeWindowWidth);
-  }, []);
 
   return (
     <div className="text-white mt-8 pt-8 lg:mt-0 border-t border-gray-700 lg:border-none">
