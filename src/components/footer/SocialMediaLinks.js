@@ -8,6 +8,7 @@ import {
   faApple,
 } from "@fortawesome/free-brands-svg-icons";
 import useWindowWidth from "../../hooks/useWindowWidth";
+import { useState } from "react";
 
 const SocialMediaLinks = () => {
   const [socials] = useState([
