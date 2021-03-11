@@ -59,14 +59,12 @@ const FooterLinks = () => {
     <div className="text-white mt-12">
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-4">
         {links.map((link) => (
-          <div>
-            <h4 className="font-semibold" key={link.id}>
-              {link.header}
-            </h4>
+          <div key={link.id}>
+            <h4 className="font-semibold">{link.header}</h4>
             <ul>
               {link.links.map((quickLink) => (
-                <li className="text-sm mt-4">
-                  <a href="#">{quickLink.title}</a>
+                <li className="text-sm mt-4" key={quickLink.title}>
+                  <a href="/">{quickLink.title}</a>
                 </li>
               ))}
             </ul>
