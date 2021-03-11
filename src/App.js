@@ -3,12 +3,13 @@ import Home from "./pages/Home";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Product from "./pages/Product";
 import Navbar from "./components/Navbar";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
     <Router>
+      <Navbar />
       <main>
-        <Navbar />
         <Switch>
           <Route exact path="/">
             <Home />
@@ -19,6 +20,7 @@ function App() {
           </Route>
         </Switch>
       </main>
+      <Footer />
     </Router>
   );
 }
