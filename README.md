@@ -1,4 +1,4 @@
-Live version: http://staem.netlify.app/
+Live version: http://gojek.netlify.app/
 
 # Getting Started with Create React App
 
