@@ -64,7 +64,7 @@ const SocialMediaLinks = () => {
   );
 
   return (
-    <div className="text-white mt-8 pt-8 lg:mt-0 border-t border-gray-700 lg:border-none">
+    <div className="text-white mt-8 pt-8 flex flex-col md:flex-row lg:flex-col md:justify-between lg:justify-start lg:mt-0 border-t border-gray-700 lg:border-none">
       <div>
         <h4 className="font-semibold text-lg mb-4 lg:text-xl">
           Connect with us
@@ -85,11 +85,11 @@ const SocialMediaLinks = () => {
       </div>
 
       <div>
-        <h4 className="font-semibold text-lg mt-8 lg:text-xl">
+        <h4 className="font-semibold text-lg mt-8 md:mt-0 lg:mt-8 lg:text-xl">
           Download the app
         </h4>
 
-        {windowWidth <= 768 ? mobileAppIconsLayout : desktopAppIconsLayout}
+        {windowWidth <= 640 ? mobileAppIconsLayout : desktopAppIconsLayout}
       </div>
     </div>
   );

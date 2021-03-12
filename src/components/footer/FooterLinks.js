@@ -57,7 +57,7 @@ const FooterLinks = () => {
 
   return (
     <div className="text-white mt-12 lg:py-8 lg:mt-4 lg:mr-8">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4">
         {links.map((link) => (
           <div key={link.id}>
             <h4 className="font-semibold lg:text-lg">{link.header}</h4>

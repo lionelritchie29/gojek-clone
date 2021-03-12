@@ -19,19 +19,19 @@ const Footer = () => {
           </div>
         </div>
 
-        <ul className="text-white lg:flex mt-8 pt-8 border-gray-700 border-t">
-          <li className="underline mt-3 lg:mr-10">
+        <ul className="text-white md:flex md:justify-center lg:justify-start mt-8 pt-8 border-gray-700 border-t">
+          <li className="underline mt-3 md:mr-10">
             <a href="/">Privacy Policy</a>
           </li>
-          <li className="underline mt-3 lg:mr-10">
+          <li className="underline mt-3 md:mr-10">
             <a href="/">Terms & Conditions</a>
           </li>
-          <li className="underline mt-3 lg:mr-10">
+          <li className="underline mt-3 md:mr-10">
             <a href="/">Data Attribution</a>
           </li>
         </ul>
 
-        <p className="text-white mt-8 lg:mt-12 text-sm lg:text-base">
+        <p className="text-white mt-8 lg:mt-12 md:px-6 lg:px-0 text-sm md:text-base md:text-center lg:text-left">
           &copy; 2021 Gojek | Gojek is a trademark of PT Aplikasi Karya Anak
           Bangsa. Registered in the Directorate General of Intellectual Property
           of the Republic of Indonesia.
