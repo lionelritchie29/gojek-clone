@@ -3,7 +3,7 @@ import Facts from "./Facts";
 const FactSheet = () => {
   return (
     <section>
-      <h2 className="font-extrabold font-extended pt-28 text-3xl lg:text-6xl text-center">
+      <h2 className="font-extrabold font-extended pt-28 text-3xl md:text-5xl lg:text-6xl text-center">
         We scale like a dream
       </h2>
 

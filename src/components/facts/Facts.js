@@ -44,7 +44,7 @@ const Facts = () => {
   return (
     <div className="lg:w-4/5 lg:mx-auto">
       <div
-        className="flex overflow-auto px-4 lg:px-8 pb-12 lg:grid lg:grid-cols-4 gap-6 lg:gap-10"
+        className="flex overflow-auto px-4 md:px-8 pb-12 md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10"
         style={{ gridAutoRows: "1fr" }}
       >
         {facts.map((fact) => (
