@@ -20,7 +20,6 @@ function App() {
           </Route>
         </Switch>
       </main>
-      <div className="h-10"></div>
       <Footer />
     </Router>
   );

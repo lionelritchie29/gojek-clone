@@ -1,5 +1,6 @@
 import AchievementSheet from "../components/achievement/AchievementSheet";
 import AchievementWhiteSpace from "../components/achievement/AchievementWhiteSpace";
+import DownloadSheet from "../components/download/DownloadSheet";
 import FactSheet from "../components/facts/FactSheet";
 import JoinTheRideSheet from "../components/join-the-ride/JoinTheRideSheet";
 import SafetySheet from "../components/safety/SafetySheet";
@@ -14,6 +15,7 @@ const Home = () => {
       <FactSheet />
       <SafetySheet />
       <JoinTheRideSheet />
+      <DownloadSheet />
     </div>
   );
 };
