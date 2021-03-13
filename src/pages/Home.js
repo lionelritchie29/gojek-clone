@@ -16,8 +16,8 @@ const Home = () => {
       <FactSheet />
       <SafetySheet />
       <JoinTheRideSheet />
-      <DownloadSheet />
       <PerkSheet />
+      <DownloadSheet />
     </div>
   );
 };

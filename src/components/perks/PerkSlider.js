@@ -39,9 +39,20 @@ const PerkSlider = () => {
   const settings = {
     mouseDrag: true,
     loop: true,
-    items: 3,
     center: true,
-    fixedWidth: 850,
+    responsive: {
+      640: {
+        items: 1,
+      },
+      768: {
+        fixedWidth: 480,
+        items: 3,
+      },
+      1024: {
+        fixedWidth: 850,
+        items: 3,
+      },
+    },
   };
 
   return (
