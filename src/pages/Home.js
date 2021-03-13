@@ -3,7 +3,7 @@ import AchievementWhiteSpace from "../components/achievement/AchievementWhiteSpa
 import DownloadSheet from "../components/download/DownloadSheet";
 import FactSheet from "../components/facts/FactSheet";
 import JoinTheRideSheet from "../components/join-the-ride/JoinTheRideSheet";
-import PerkSlider from "../components/perks/PerkSlider";
+import PerkSheet from "../components/perks/PerkSheet";
 import SafetySheet from "../components/safety/SafetySheet";
 import VideoHeader from "../components/VideoHeader";
 
@@ -17,7 +17,7 @@ const Home = () => {
       <SafetySheet />
       <JoinTheRideSheet />
       <DownloadSheet />
-      <PerkSlider />
+      <PerkSheet />
     </div>
   );
 };

@@ -37,13 +37,11 @@ const PerkSlider = () => {
   ]);
 
   const settings = {
-    lazyload: true,
-    nav: false,
     mouseDrag: true,
     loop: true,
     items: 3,
-    gutter: 20,
     center: true,
+    fixedWidth: 850,
   };
 
   return (
