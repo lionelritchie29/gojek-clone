@@ -5,9 +5,12 @@ import perk1 from "../../assets/perks/perks1.jpg";
 import perk2 from "../../assets/perks/perks2.jpg";
 import perk3 from "../../assets/perks/perks3.jpg";
 import perk4 from "../../assets/perks/perks4.jpg";
+import useWindowWidth from "../../hooks/useWindowWidth";
 import Perk from "./Perk";
 
 const PerkSlider = () => {
+  const windowWidth = useWindowWidth();
+
   const [perks] = useState([
     {
       id: 1,
@@ -36,9 +39,20 @@ const PerkSlider = () => {
     },
   ]);
 
+  const dotStyles = {
+    height: "10px",
+    width: "10px",
+    backgroundColor: "#bbb",
+    borderRadius: "50%",
+    display: "inline-block",
+    marginRight: "0.2rem",
+  };
+
   const settings = {
     mouseDrag: true,
-    loop: true,
+    navContainer: "#perk-dots",
+    prevButton: "#perk-prev",
+    nextButton: "#perk-next",
     center: true,
     responsive: {
       640: {
@@ -55,12 +69,52 @@ const PerkSlider = () => {
     },
   };
 
+  const emptySliderControls = (
+    <div>
+      <span id="perk-prev"></span>
+      <span id="perk-next"></span>
+    </div>
+  );
+
   return (
-    <TinySlider settings={settings}>
-      {perks.map((perk) => (
-        <Perk perk={perk} key={perk.id} />
-      ))}
-    </TinySlider>
+    <div className="relative">
+      <TinySlider settings={settings}>
+        {perks.map((perk) => (
+          <Perk perk={perk} key={perk.id} />
+        ))}
+      </TinySlider>
+
+      {windowWidth <= 640 && (
+        <div
+          id="perk-dots"
+          className="mx-auto"
+          style={{ width: "fit-content" }}
+        >
+          {perks.map((perk, index) => (
+            <div style={dotStyles} key={perk.id}></div>
+          ))}
+        </div>
+      )}
+
+      {windowWidth > 640 ? (
+        <div className="flex justify-between absolute w-full top-1/2 px-4 translate-y-1/2">
+          <button
+            id="perk-prev"
+            className="py-2 px-4 bg-white text-xl inline-block rounded-full"
+          >
+            &#60;
+          </button>
+          <button
+            id="perk-next"
+            className="py-2 px-4 bg-white hover:cursor-pointer text-xl inline-block rounded-full"
+          >
+            &#62;
+          </button>
+        </div>
+      ) : (
+        emptySliderControls
+      )}
+    </div>
   );
 };
 
