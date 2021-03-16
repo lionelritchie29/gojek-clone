@@ -69,13 +69,6 @@ const PerkSlider = () => {
     },
   };
 
-  const emptySliderControls = (
-    <div>
-      <span id="perk-prev"></span>
-      <span id="perk-next"></span>
-    </div>
-  );
-
   return (
     <div className="relative">
       <TinySlider settings={settings}>
@@ -96,24 +89,23 @@ const PerkSlider = () => {
         </div>
       )}
 
-      {windowWidth > 640 ? (
-        <div className="flex justify-between absolute w-full top-1/2 px-4 translate-y-1/2">
-          <button
-            id="perk-prev"
-            className="py-2 px-4 bg-white text-xl inline-block rounded-full"
-          >
-            &#60;
-          </button>
-          <button
-            id="perk-next"
-            className="py-2 px-4 bg-white hover:cursor-pointer text-xl inline-block rounded-full"
-          >
-            &#62;
-          </button>
-        </div>
-      ) : (
-        emptySliderControls
-      )}
+      <div
+        className="flex justify-between absolute w-full top-1/2 px-4 translate-y-1/2"
+        style={{ display: windowWidth <= 640 ? "none" : "flex" }}
+      >
+        <button
+          id="perk-prev"
+          className="py-2 px-4 bg-white text-xl inline-block rounded-full"
+        >
+          &#60;
+        </button>
+        <button
+          id="perk-next"
+          className="py-2 px-4 bg-white hover:cursor-pointer text-xl inline-block rounded-full"
+        >
+          &#62;
+        </button>
+      </div>
     </div>
   );
 };

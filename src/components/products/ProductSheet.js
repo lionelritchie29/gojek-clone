@@ -1,3 +1,5 @@
+import ProductSlider from "./ProductSlider";
+
 const ProductSheet = () => {
   return (
     <section className="bg-secondary py-12 lg:py-36">
@@ -14,6 +16,8 @@ const ProductSheet = () => {
           </button>
         </div>
       </div>
+
+      <ProductSlider />
     </section>
   );
 };

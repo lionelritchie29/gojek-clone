@@ -23,7 +23,7 @@ const Navbar = () => {
   ]);
 
   return (
-    <Headroom>
+    <Headroom style={{ zIndex: 999 }}>
       <nav className="bg-secondary p-4 lg:p-8 z-10 relative">
         <div className="flex justify-between lg:w-4/5 lg:mx-auto">
           <div>
