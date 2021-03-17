@@ -220,14 +220,6 @@ button {
   width: 20rem;
 }
 
-.product-active:first-child {
-  margin-top: -4rem;
-}
-
-.product-active:nth-child(2) {
-  display: block !important;
-}
-
 @media screen and (min-width: 1024px) {
   .info-card-container {
     min-width: 0;
