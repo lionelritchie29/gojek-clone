@@ -86,9 +86,16 @@ const ProductSlider = () => {
   ]);
 
   useLayoutEffect(() => {
+    const { ref } = slider.current;
     const { index, slideItems } = slider.current.slider.getInfo();
     const container = slideItems[index].querySelector("#product-container");
 
+    if (windowWidth > 1024) {
+      ref.parentElement.parentElement.parentElement.style.transform =
+        "rotate(-10deg)";
+    }
+
+    slideItems[index].querySelector("#float").classList.add("float");
     container.classList.remove("w-3/4");
     if (windowWidth >= 768) {
       container.firstChild.classList.add("-mt-16");
@@ -111,6 +118,7 @@ const ProductSlider = () => {
     const productDetail = slideItems[index].querySelector("#product-detail");
 
     // reset previous slide
+    slideItems[indexCached].querySelector("#float").classList.remove("float");
     const prevContainer = slideItems[indexCached].querySelector(
       "#product-container"
     );
@@ -127,6 +135,7 @@ const ProductSlider = () => {
     }
 
     // set current slide as active
+    slideItems[index].querySelector("#float").classList.add("float");
     const currContainer = slideItems[index].querySelector("#product-container");
 
     currContainer.classList.remove("w-3/4");
@@ -168,7 +177,7 @@ const ProductSlider = () => {
   };
 
   return (
-    <div className="lg:px-36 py-8 mx-auto">
+    <div className="lg:px-36 py-8 mx-auto overflow-hidden">
       <TinySlider
         className="py-28"
         settings={settings}
@@ -183,7 +192,7 @@ const ProductSlider = () => {
       <ul
         style={{ display: windowWidth <= 640 ? "none" : "flex" }}
         id="product-nav"
-        className="text-white flex w-full lg:px-36 mt-12 lg:w-3/5 mx-auto justify-between"
+        className="text-white flex w-full lg:px-36 mt-12 lg:w-3/5 mx-auto justify-around lg:justify-between"
       >
         {products.map((product) => (
           <li key={product.id}>{product.category}</li>

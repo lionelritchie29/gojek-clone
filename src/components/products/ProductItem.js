@@ -12,6 +12,7 @@ const ProductItem = ({ product }) => {
         >
           <div className="absolute bottom-0 left-0 w-full">
             <img
+              id="float"
               className="w-full object-contain"
               src={product.background}
               alt="background"
