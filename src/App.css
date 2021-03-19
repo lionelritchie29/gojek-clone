@@ -216,10 +216,6 @@ button {
   background-position: center;
 }
 
-.product-active {
-  width: 20rem;
-}
-
 @media screen and (min-width: 1024px) {
   .info-card-container {
     min-width: 0;

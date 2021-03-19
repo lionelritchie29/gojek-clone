@@ -2,7 +2,8 @@ const ProductItem = ({ product }) => {
   return (
     <div>
       <div
-        className="rounded-3xl"
+        id="product-container"
+        className="rounded-3xl w-3/4 mx-auto"
         style={{ backgroundColor: product.innerBgColor }}
       >
         <div

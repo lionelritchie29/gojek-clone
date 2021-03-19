@@ -86,23 +86,14 @@ const ProductSlider = () => {
   ]);
 
   useLayoutEffect(() => {
-    const { ref } = slider.current;
     const { index, slideItems } = slider.current.slider.getInfo();
+    const container = slideItems[index].querySelector("#product-container");
 
-    if (windowWidth > 640) ref.classList.add("-m-9");
-
-    if (windowWidth >= 1024) {
-      slideItems[index].style.marginRight = "4.5rem";
-      slideItems[index].firstChild.classList.add("product-active");
-      slideItems[index].firstChild.firstChild.classList.add("-mt-16");
-    } else if (windowWidth >= 768) {
-      slideItems[index].style.marginRight = "5.5rem";
-      slideItems[index].firstChild.classList.add("product-active");
-      slideItems[index].firstChild.firstChild.classList.add("-mt-16");
-    } else {
-      slideItems[index].style.marginRight = "1rem";
-      slideItems[index].firstChild.style.transform = "scaleY(1.1)";
-      slideItems[index].firstChild.classList.add("w-52");
+    container.classList.remove("w-3/4");
+    if (windowWidth >= 768) {
+      container.firstChild.classList.add("-mt-16");
+    } else if (windowWidth < 768 && windowWidth !== 0) {
+      container.style.transform = "scale(1.1)";
     }
 
     if (windowWidth > 640) {
@@ -120,36 +111,33 @@ const ProductSlider = () => {
     const productDetail = slideItems[index].querySelector("#product-detail");
 
     // reset previous slide
-    if (windowWidth > 640) {
-      previousProductDetail.classList.add("hidden");
-      slideItems[indexCached].firstChild.firstChild.classList.remove("-mt-16");
+    const prevContainer = slideItems[indexCached].querySelector(
+      "#product-container"
+    );
+
+    prevContainer.classList.add("w-3/4");
+    if (windowWidth >= 768) {
+      prevContainer.firstChild.classList.remove("-mt-16");
+    } else if (windowWidth < 768 && windowWidth !== 0) {
+      prevContainer.style.transform = "scale(1)";
     }
 
-    if (windowWidth >= 768) {
-      slideItems[indexCached].firstChild.classList.remove("product-active");
-      slideItems[indexCached].style.marginRight = "0";
-    } else {
-      slideItems[indexCached].style.marginRight = "0";
-      slideItems[indexCached].firstChild.style.transform = "scaleY(1)";
-      slideItems[indexCached].firstChild.classList.remove("w-52");
+    if (windowWidth > 640) {
+      previousProductDetail.classList.add("hidden");
     }
 
     // set current slide as active
-    if (windowWidth > 640) {
-      productDetail.classList.remove("hidden");
-      slideItems[index].firstChild.firstChild.classList.add("-mt-16");
+    const currContainer = slideItems[index].querySelector("#product-container");
+
+    currContainer.classList.remove("w-3/4");
+    if (windowWidth >= 768) {
+      currContainer.firstChild.classList.add("-mt-16");
+    } else if (windowWidth < 768 && windowWidth !== 0) {
+      currContainer.style.transform = "scale(1.1)";
     }
 
-    if (windowWidth >= 1024) {
-      slideItems[index].firstChild.classList.add("product-active");
-      slideItems[index].style.marginRight = "4.5rem";
-    } else if (windowWidth >= 768) {
-      slideItems[index].firstChild.classList.add("product-active");
-      slideItems[index].style.marginRight = "5.5rem";
-    } else {
-      slideItems[index].style.marginRight = "1rem";
-      slideItems[index].firstChild.style.transform = "scaleY(1.1)";
-      slideItems[index].firstChild.classList.add("w-52");
+    if (windowWidth > 640) {
+      productDetail.classList.remove("hidden");
     }
   };
 
@@ -164,19 +152,16 @@ const ProductSlider = () => {
       300: {
         items: 3,
         mouseDrag: true,
-        gutter: 20,
         fixedWidth: 192,
       },
       768: {
         items: 3,
         mouseDrag: false,
-        gutter: 40,
         fixedWidth: false,
       },
       1024: {
         items: 5,
         mouseDrag: false,
-        gutter: 40,
         fixedWidth: false,
       },
     },
