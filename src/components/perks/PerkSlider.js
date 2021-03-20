@@ -81,7 +81,7 @@ const PerkSlider = () => {
     const { children } = perkDots.current;
     const arrChildren = Array.from(children);
 
-    if (indexBefore != -1) {
+    if (indexBefore !== -1) {
       arrChildren[indexBefore].classList.remove("perk-dot-active");
     }
 

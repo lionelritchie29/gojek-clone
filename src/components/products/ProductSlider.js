@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState, useRef, Children } from "react";
+import { useLayoutEffect, useState, useRef } from "react";
 import TinySlider from "tiny-slider-react";
 import ProductItem from "./ProductItem";
 import useWindowWidth from "../../hooks/useWindowWidth";
