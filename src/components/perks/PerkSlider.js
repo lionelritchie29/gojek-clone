@@ -78,6 +78,8 @@ const PerkSlider = () => {
   });
 
   const setActiveNav = () => {
+    if (windowWidth > 640) return;
+
     const { children } = perkDots.current;
     const arrChildren = Array.from(children);
 
