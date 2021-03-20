@@ -1,6 +1,6 @@
 const Achievement = ({ achievement }) => {
   return (
-    <div className="min-w-full lg:min-w-0">
+    <div className="lg:min-w-0">
       <div className="w-1/2 lg:w-3/4 mx-auto">
         <img src={achievement.icon} alt={achievement.title} />
       </div>
