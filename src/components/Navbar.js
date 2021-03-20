@@ -9,16 +9,13 @@ const Navbar = () => {
       id: 1,
       title: "Home",
       link: "/",
+      type: "in",
     },
     {
       id: 2,
-      title: "Products",
-      link: "/products",
-    },
-    {
-      id: 3,
-      title: "Help",
-      link: "/help",
+      title: "About",
+      link: "https://bylionel.netlify.app",
+      type: "out",
     },
   ]);
 
@@ -39,7 +36,13 @@ const Navbar = () => {
                   key={link.id}
                   className="cursor-pointer ml-8 text-xl font-semibold hover:underline"
                 >
-                  <Link to={link.link}>{link.title}</Link>
+                  {link.type === "in" ? (
+                    <Link to={link.link}>{link.title}</Link>
+                  ) : (
+                    <a href={link.link} target="_blank" rel="noopener">
+                      {link.title}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

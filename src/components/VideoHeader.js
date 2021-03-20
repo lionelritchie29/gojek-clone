@@ -14,11 +14,17 @@ const VideoHeader = () => {
         <source src={video} type="video/mp4" />
       </video>
 
-      {/* <div className="absolute py-12 px-60" style={{ top: "30rem" }}>
-        <h1 className="text-8xl text-white font-bold">4 countries.</h1>
-        <h1 className="text-8xl text-white font-bold">20+ products.</h1>
-        <h1 className="text-8xl text-white font-bold">3 super apps.</h1>
-      </div> */}
+      <div className="absolute py-12 left-6 md:left-8 lg:left-72 font-extended font-extrabold bottom-20">
+        <h1 className="text-4xl md:text-5xl lg:text-7xl mb-3 text-white font-bold">
+          4 countries.
+        </h1>
+        <h1 className="text-4xl md:text-5xl lg:text-7xl mb-3 text-white font-bold">
+          20+ products.
+        </h1>
+        <h1 className="text-4xl md:text-5xl lg:text-7xl mb-3 text-white font-bold">
+          3 super apps.
+        </h1>
+      </div>
     </div>
   );
 };
