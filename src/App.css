@@ -193,7 +193,7 @@ button {
 }
 
 .info-card-container {
-  min-width: 75%;
+  min-width: 0;
 }
 
 .info-card {
@@ -235,6 +235,12 @@ button {
 .float {
   transform: translatey(0px);
   animation: float 6s ease-in-out infinite;
+}
+
+@media screen and (min-width: 1024px) {
+  .info-card-container {
+    min-width: 75%;
+  }
 }
 
 @media screen and (min-width: 1024px) {

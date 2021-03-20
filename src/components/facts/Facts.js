@@ -1,11 +1,17 @@
-import { useState } from "react";
+import { useState, useRef, useLayoutEffect, Fragment } from "react";
+import TinySlider from "tiny-slider-react";
 import appDownloadIcon from "../../assets/info1.png";
 import driverPartnerIcon from "../../assets/info2.png";
 import goFoodMerchantIcon from "../../assets/info3.png";
 import jumpDownloadIcon from "../../assets/info4.png";
+import useWindowWidth from "../../hooks/useWindowWidth";
 import Fact from "./Fact";
 
 const Facts = () => {
+  const windowWidth = useWindowWidth();
+  const perkDots = useRef();
+  let indexBefore = -1;
+
   const [facts] = useState([
     {
       id: 1,
@@ -41,16 +47,85 @@ const Facts = () => {
     },
   ]);
 
+  const settings = {
+    mouseDrag: true,
+    controls: false,
+    gutter: 20,
+    navContainer: "#facts-dots",
+    item: 1,
+    fixedWidth: 250,
+    edgePadding: 20,
+    loop: false,
+  };
+
+  const dotStyles = {
+    height: "10px",
+    width: "10px",
+    backgroundColor: "#bbb",
+    borderRadius: "50%",
+    display: "inline-block",
+    marginRight: "0.2rem",
+  };
+
+  useLayoutEffect(() => {
+    setActiveNav();
+  });
+
+  const setActiveNav = () => {
+    if (windowWidth > 640) return;
+
+    const { children } = perkDots.current;
+    const arrChildren = Array.from(children);
+
+    if (indexBefore !== -1) {
+      arrChildren[indexBefore].classList.remove("perk-dot-active");
+    }
+
+    arrChildren.forEach((child, index) => {
+      if (child.classList.contains("tns-nav-active")) {
+        indexBefore = index;
+        child.classList.add("perk-dot-active");
+      }
+    });
+  };
+
   return (
     <div className="lg:w-4/5 lg:mx-auto">
-      <div
-        className="flex overflow-auto px-4 md:px-8 pb-12 md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10"
-        style={{ gridAutoRows: "1fr" }}
-      >
-        {facts.map((fact) => (
-          <Fact key={fact.id} fact={fact} />
-        ))}
-      </div>
+      {window.innerWidth <= 640 && (
+        <Fragment>
+          <TinySlider
+            className="pb-6"
+            settings={settings}
+            onIndexChanged={setActiveNav}
+          >
+            {facts.map((fact) => (
+              <Fact key={fact.id} fact={fact} />
+            ))}
+          </TinySlider>
+
+          <ul
+            id="facts-dots"
+            ref={perkDots}
+            className="mx-auto pb-16"
+            style={{ width: "fit-content" }}
+          >
+            {facts.map((fact) => (
+              <li style={dotStyles} key={fact.id}></li>
+            ))}
+          </ul>
+        </Fragment>
+      )}
+
+      {window.innerWidth > 640 && (
+        <div
+          className="md:px-8 pb-12 md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10"
+          style={{ gridAutoRows: "1fr" }}
+        >
+          {facts.map((fact) => (
+            <Fact key={fact.id} fact={fact} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

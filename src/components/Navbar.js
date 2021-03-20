@@ -39,7 +39,7 @@ const Navbar = () => {
                   {link.type === "in" ? (
                     <Link to={link.link}>{link.title}</Link>
                   ) : (
-                    <a href={link.link} target="_blank" rel="noopener">
+                    <a href={link.link} target="_blank" rel="noreferrer">
                       {link.title}
                     </a>
                   )}
