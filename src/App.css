@@ -168,8 +168,12 @@ button {
   transition-duration: 0.3s;
 }
 
-.tns-nav-active {
+.perk-dot-active {
   background-color: rgba(0, 136, 13, 1) !important;
+}
+
+.product-slider-hover-trigger:hover .product-slider-hover-target {
+  display: block !important;
 }
 
 .shadow-green {

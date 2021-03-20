@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import TinySlider from "tiny-slider-react";
 
 import perk1 from "../../assets/perks/perks1.jpg";
@@ -10,6 +10,10 @@ import Perk from "./Perk";
 
 const PerkSlider = () => {
   const windowWidth = useWindowWidth();
+  const perkDots = useRef();
+  const slider = useRef();
+
+  let indexBefore = -1;
 
   const [perks] = useState([
     {
@@ -69,24 +73,49 @@ const PerkSlider = () => {
     },
   };
 
+  useLayoutEffect(() => {
+    setActiveNav();
+  });
+
+  const setActiveNav = () => {
+    const { children } = perkDots.current;
+    const arrChildren = Array.from(children);
+
+    if (indexBefore != -1) {
+      arrChildren[indexBefore].classList.remove("perk-dot-active");
+    }
+
+    arrChildren.forEach((child, index) => {
+      if (child.classList.contains("tns-nav-active")) {
+        indexBefore = index;
+        child.classList.add("perk-dot-active");
+      }
+    });
+  };
+
   return (
     <div className="relative">
-      <TinySlider settings={settings}>
+      <TinySlider
+        ref={slider}
+        settings={settings}
+        onIndexChanged={setActiveNav}
+      >
         {perks.map((perk) => (
           <Perk perk={perk} key={perk.id} />
         ))}
       </TinySlider>
 
       {windowWidth <= 640 && (
-        <div
+        <ul
           id="perk-dots"
+          ref={perkDots}
           className="mx-auto"
           style={{ width: "fit-content" }}
         >
-          {perks.map((perk, index) => (
-            <div style={dotStyles} key={perk.id}></div>
+          {perks.map((perk) => (
+            <li style={dotStyles} key={perk.id}></li>
           ))}
-        </div>
+        </ul>
       )}
 
       <div

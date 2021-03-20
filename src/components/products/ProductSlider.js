@@ -1,10 +1,11 @@
-import { useLayoutEffect, useState, useRef } from "react";
+import { useLayoutEffect, useState, useRef, Children } from "react";
 import TinySlider from "tiny-slider-react";
 import ProductItem from "./ProductItem";
 import useWindowWidth from "../../hooks/useWindowWidth";
 
 const ProductSlider = () => {
   const slider = useRef();
+  const sliderNav = useRef();
   const windowWidth = useWindowWidth();
 
   const [products] = useState([
@@ -90,6 +91,8 @@ const ProductSlider = () => {
     const { index, slideItems } = slider.current.slider.getInfo();
     const container = slideItems[index].querySelector("#product-container");
 
+    setActiveNav();
+
     if (windowWidth > 1024) {
       ref.parentElement.parentElement.parentElement.style.transform =
         "rotate(-10deg)";
@@ -112,6 +115,8 @@ const ProductSlider = () => {
 
   const onIndexChanged = (info, eventName) => {
     const { index, indexCached, slideItems } = info;
+    setActiveNav(indexCached);
+
     const previousProductDetail = slideItems[indexCached].querySelector(
       "#product-detail"
     );
@@ -148,6 +153,24 @@ const ProductSlider = () => {
     if (windowWidth > 640) {
       productDetail.classList.remove("hidden");
     }
+  };
+
+  const setActiveNav = (indexBefore = null) => {
+    const { children } = sliderNav.current;
+    const arrayChildren = Array.from(children);
+
+    if (indexBefore !== null) {
+      // console.log(arrayChildren);
+      arrayChildren[indexBefore % 5]
+        .querySelector("div")
+        .classList.add("hidden");
+    }
+
+    arrayChildren.forEach((child) => {
+      if (child.classList.contains("tns-nav-active")) {
+        child.querySelector("div").classList.remove("hidden");
+      }
+    });
   };
 
   const settings = {
@@ -192,10 +215,20 @@ const ProductSlider = () => {
       <ul
         style={{ display: windowWidth <= 640 ? "none" : "flex" }}
         id="product-nav"
+        ref={sliderNav}
         className="text-white flex w-full lg:px-36 mt-12 lg:w-3/5 mx-auto justify-around lg:justify-between"
       >
         {products.map((product) => (
-          <li key={product.id}>{product.category}</li>
+          <li
+            key={product.id}
+            className="cursor-pointer h-6 hover:font-semibold product-slider-hover-trigger"
+          >
+            <span>{product.category} </span>
+            <div
+              className="w-10 mx-auto hidden rounded-3xl h-1 mt-2 product-slider-hover-target"
+              style={{ background: product.bgColor }}
+            ></div>
+          </li>
         ))}
       </ul>
     </div>

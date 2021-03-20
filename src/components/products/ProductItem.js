@@ -4,7 +4,9 @@ const ProductItem = ({ product }) => {
       <div
         id="product-container"
         className="rounded-3xl w-3/4 mx-auto"
-        style={{ backgroundColor: product.innerBgColor }}
+        style={{
+          backgroundColor: product.innerBgColor,
+        }}
       >
         <div
           className="h-72 md:h-80 rounded-3xl relative"
