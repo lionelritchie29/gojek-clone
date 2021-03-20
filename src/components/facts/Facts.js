@@ -9,7 +9,7 @@ import Fact from "./Fact";
 
 const Facts = () => {
   const windowWidth = useWindowWidth();
-  const perkDots = useRef();
+  const factDots = useRef();
   let indexBefore = -1;
 
   const [facts] = useState([
@@ -74,7 +74,7 @@ const Facts = () => {
   const setActiveNav = () => {
     if (windowWidth > 640) return;
 
-    const { children } = perkDots.current;
+    const { children } = factDots.current;
     const arrChildren = Array.from(children);
 
     if (indexBefore !== -1) {
@@ -92,28 +92,28 @@ const Facts = () => {
   return (
     <div className="lg:w-4/5 lg:mx-auto">
       {window.innerWidth <= 640 && (
-        <Fragment>
-          <TinySlider
-            className="pb-6"
-            settings={settings}
-            onIndexChanged={setActiveNav}
-          >
-            {facts.map((fact) => (
-              <Fact key={fact.id} fact={fact} />
-            ))}
-          </TinySlider>
+        <TinySlider
+          className="pb-6"
+          settings={settings}
+          onIndexChanged={setActiveNav}
+        >
+          {facts.map((fact) => (
+            <Fact key={fact.id} fact={fact} />
+          ))}
+        </TinySlider>
+      )}
 
-          <ul
-            id="facts-dots"
-            ref={perkDots}
-            className="mx-auto pb-16"
-            style={{ width: "fit-content" }}
-          >
-            {facts.map((fact) => (
-              <li style={dotStyles} key={fact.id}></li>
-            ))}
-          </ul>
-        </Fragment>
+      {windowWidth <= 640 && (
+        <ul
+          id="facts-dots"
+          ref={factDots}
+          className="mx-auto pb-16"
+          style={{ width: "fit-content" }}
+        >
+          {facts.map((fact) => (
+            <li style={dotStyles} key={fact.id}></li>
+          ))}
+        </ul>
       )}
 
       {window.innerWidth > 640 && (
