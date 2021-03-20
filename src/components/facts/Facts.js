@@ -1,4 +1,4 @@
-import { useState, useRef, useLayoutEffect, Fragment } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import TinySlider from "tiny-slider-react";
 import appDownloadIcon from "../../assets/info1.png";
 import driverPartnerIcon from "../../assets/info2.png";
