@@ -24,7 +24,7 @@ const SafetySheet = () => {
         ></div>
         <div>
           <button
-            className="bg-primary font-semibold text-white rounded-full text-lg px-4 lg:px-8 lg:py-2"
+            className="z-20 bg-primary font-semibold text-white rounded-full text-lg px-4 lg:px-8 lg:py-2"
             style={{ width: "fit-content" }}
           >
             Know more
