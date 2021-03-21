@@ -6,6 +6,7 @@ import HamburgerMenu from "react-hamburger-menu";
 
 const Navbar = () => {
   const hamburgerMenu = useRef();
+  const navContainer = useRef();
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [links] = useState([
     {
@@ -22,17 +23,13 @@ const Navbar = () => {
     },
   ]);
 
-  // const noScroll = () => {
-  //   window.scrollTo(0, 0);
-  // };
-
   const setMobileNav = () => {
     if (hamburgerMenu.current.classList.contains("hidden")) {
       hamburgerMenu.current.classList.remove("hidden");
-      // window.addEventListener("scroll", noScroll);
+      navContainer.current.classList.add("fixed");
     } else {
       hamburgerMenu.current.classList.add("hidden");
-      // window.addEventListener("scroll", () => {});
+      navContainer.current.classList.remove("fixed");
     }
 
     setIsNavOpen(!isNavOpen);
@@ -41,7 +38,7 @@ const Navbar = () => {
   return (
     <Fragment>
       <Headroom style={{ zIndex: 999 }}>
-        <nav className="bg-secondary p-4 lg:p-8 z-10 relative">
+        <nav ref={navContainer} className="w-full bg-secondary p-4 lg:p-8 z-10">
           <div className="flex justify-between lg:w-4/5 lg:mx-auto">
             <div>
               <img src={logo} alt="logo" />
@@ -81,7 +78,7 @@ const Navbar = () => {
 
       <ul
         ref={hamburgerMenu}
-        className="font-bold text-2xl hidden fixed w-full h-screen bg-secondary text-white z-50 px-5 py-10"
+        className="font-bold text-2xl hidden fixed w-full h-screen bg-secondary text-white z-50 px-5 py-24"
       >
         {links.map((link) => (
           <li key={link.id} className="cursor-pointer mb-5 text-2xl font-bold">
