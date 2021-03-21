@@ -22,9 +22,9 @@ const Navbar = () => {
     },
   ]);
 
-  const noScroll = () => {
-    window.scrollTo(0, 0);
-  };
+  // const noScroll = () => {
+  //   window.scrollTo(0, 0);
+  // };
 
   const setMobileNav = () => {
     if (hamburgerMenu.current.classList.contains("hidden")) {
